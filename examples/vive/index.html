@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
+  <title>Examples • Tracked controls</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="../../dist/aframe-extras.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
+</head>
+
+<body>
+  <a-scene id="scene" physics="debug: true">
+
+
+    <a-assets>
+      <a-asset-item id="peach-obj" src="peach.obj"></a-asset-item>
+      <a-asset-item id="peach-mtl" src="peach.mtl"></a-asset-item>
+      <a-asset-item id="peach-glb" src="peach.glb"></a-asset-item>
+
+
+    </a-assets>
+
+    <!-- Player -->
+    <a-entity camera look-controls></a-entity>
+    <a-entity rotation="-45 0 0" static-body="shape: sphere; sphereRadius: 0.02;"
+      hand-controls="hand: left; handModelStyle: lowPoly;" sphere-collider="objects: .cube;" grab></a-entity>
+    <a-entity rotation="45 45 0" static-body="shape: sphere; sphereRadius: 0.02;"
+      hand-controls="hand: right; handModelStyle: lowPoly;" sphere-collider="objects: .cube;" grab></a-entity>
+
+
+
+    <a-box class="cube" dynamic-body position="0 10.25 -1" width="0.5" height="0.5" depth="0.5" color="red"></a-box>
+    <a-box class="cube" dynamic-body position="-1 10.25 -1" width="0.5" height="0.5" depth="0.5" color="green"></a-box>
+    <!-- <a-box id="other-box" class="cube" dynamic-body position="1 10.25 -1" width="0.5" height="0.5" depth="0.5"
+      color="blue"><a-entity id="ee" class="cube" obj-model="obj: #peach-obj; mtl: #peach-mtl"></a-entity></a-box> -->
+
+    <!-- <a-box id="other-box" class="cube" dynamic-body position="1 10.25 -1" width="0.2" height="0.2" depth="0.2"
+      material="transparent: true; opacity: 0;">
+      <a-entity id="ee" class="cube" position="1.8 0.2 -1.6" obj-model="obj: #peach-obj; mtl: #peach-mtl"></a-entity>
+    </a-box> -->
+
+    <a-sphere id="other-box" class="cube" dynamic-body position="1 10.25 -1" radius="0.16"
+      material="transparent: true; opacity: 0;">
+      <a-entity id="ee" class="cube" position="1.8 0.2 -1.6" obj-model="obj: #peach-obj; mtl: #peach-mtl"></a-entity>
+    </a-sphere>
+
+
+    <a-sphere class="cube" dynamic-body position="0 1.25 1" radius="0.25" color="#EF2D5E"></a-sphere>
+
+
+    <!-- <a-entity class="cube" geometry id="ee" dynamic-body="shape: sphere; mass: 20" position="1 10 -1.5"
+      gltf-model="#peach-glb"></a-entity> -->
+
+    <!-- Terrain -->
+    <a-grid static-body></a-grid>
+
+    <!-- Lighting -->
+    <a-entity light="type: point; color: #f4f4f4; intensity: 0.2; distance: 0" position="8 10 18"></a-entity>
+    <a-entity light="type: point; color: #f4f4f4; intensity: 0.6; distance: 0" position="-8 10 -18"></a-entity>
+    <a-entity light="type: ambient; color: #f4f4f4; intensity: 0.4;" position="-8 10 -18"></a-entity>
+  </a-scene>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
