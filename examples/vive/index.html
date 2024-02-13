@@ -16,9 +16,25 @@
 
 
     <a-assets>
-      <a-asset-item id="peach-obj" src="peach.obj"></a-asset-item>
-      <a-asset-item id="peach-mtl" src="peach.mtl"></a-asset-item>
-      <a-asset-item id="peach-glb" src="peach.glb"></a-asset-item>
+      <a-asset-item id="peach-glb" src="items/bag.glb"></a-asset-item>
+      <a-asset-item id="bocale-glb" src="items/bocale.glb"></a-asset-item>
+      <a-asset-item id="book-glb" src="items/book.glb"></a-asset-item>
+      <a-asset-item id="brocolis-glb" src="items/brocolis.glb"></a-asset-item>
+      <a-asset-item id="coca-glb" src="items/coca.glb"></a-asset-item>
+      <a-asset-item id="glass-glb" src="items/glass.glb"></a-asset-item>
+      <a-asset-item id="headphones-glb" src="items/headphones.glb"></a-asset-item>
+      <a-asset-item id="ketchup-glb" src="items/ketchup.glb"></a-asset-item>
+      <a-asset-item id="keyboard-glb" src="items/keyboard.glb"></a-asset-item>
+      <a-asset-item id="knife-glb" src="items/knife.glb"></a-asset-item>
+      <a-asset-item id="mac-glb" src="items/mac.glb"></a-asset-item>
+      <a-asset-item id="obergine-glb" src="items/obergine.glb"></a-asset-item>
+      <a-asset-item id="paper-glb" src="items/paper.glb"></a-asset-item>
+      <a-asset-item id="peach-glb" src="items/peach.glb"></a-asset-item>
+      <a-asset-item id="postit-glb" src="items/postit.glb"></a-asset-item>
+      <a-asset-item id="tin-glb" src="items/tin.glb"></a-asset-item>
+      <a-asset-item id="water-glb" src="items/water.glb"></a-asset-item>
+      <a-asset-item id="wine-glb" src="items/wine.glb"></a-asset-item>
+
 
 
     </a-assets>
@@ -34,25 +50,19 @@
 
     <a-box class="cube" dynamic-body position="0 10.25 -1" width="0.5" height="0.5" depth="0.5" color="red"></a-box>
     <a-box class="cube" dynamic-body position="-1 10.25 -1" width="0.5" height="0.5" depth="0.5" color="green"></a-box>
-    <!-- <a-box id="other-box" class="cube" dynamic-body position="1 10.25 -1" width="0.5" height="0.5" depth="0.5"
-      color="blue"><a-entity id="ee" class="cube" obj-model="obj: #peach-obj; mtl: #peach-mtl"></a-entity></a-box> -->
 
-    <!-- <a-box id="other-box" class="cube" dynamic-body position="1 10.25 -1" width="0.2" height="0.2" depth="0.2"
+
+    <!-- <a-sphere id="other-box" class="cube" outlineEnabled="false" dynamic-body position="1 10.25 -1" radius="0.16"
       material="transparent: true; opacity: 0;">
-      <a-entity id="ee" class="cube" position="1.8 0.2 -1.6" obj-model="obj: #peach-obj; mtl: #peach-mtl"></a-entity>
-    </a-box> -->
+      <a-entity id="ee" class="cube" position="1.77 0.2 -1.6" scale="0.5 0.5 0.5" gltf-model="#peach-glb"></a-entity>
+    </a-sphere> -->
 
-    <a-sphere id="other-box" class="cube" dynamic-body position="1 10.25 -1" radius="0.16"
-      material="transparent: true; opacity: 0;">
-      <a-entity id="ee" class="cube" position="1.8 0.2 -1.6" obj-model="obj: #peach-obj; mtl: #peach-mtl"></a-entity>
-    </a-sphere>
+    <a-entity class="cube" scale="0.5 0.5 0.5" geometry id="ee" dynamic-body="shape: sphere; mass: 2"
+      position="1 10 -1.5" gltf-model="#mac-glb"></a-entity>
 
 
-    <a-sphere class="cube" dynamic-body position="0 1.25 1" radius="0.25" color="#EF2D5E"></a-sphere>
 
 
-    <!-- <a-entity class="cube" geometry id="ee" dynamic-body="shape: sphere; mass: 20" position="1 10 -1.5"
-      gltf-model="#peach-glb"></a-entity> -->
 
     <!-- Terrain -->
     <a-grid static-body></a-grid>
@@ -63,7 +73,11 @@
     <a-entity light="type: ambient; color: #f4f4f4; intensity: 0.4;" position="-8 10 -18"></a-entity>
   </a-scene>
 
-  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('other-box').setAttribute('outlineEnabled', false);
+
+  </script>
+
 </body>
 
 </html>
