@@ -1,14 +1,11 @@
 
-var sceneEl = document.querySelector('#scene').innerHTML;
 
-var entityEl = '<a-sphere class="cube" dynamic-body position="0 2.25 1" radius="0.25" color="#EF2D5E"></a-sphere>'
-
-console.log(entityEl)
-
-sceneEl += entityEl
-
-console.log(sceneEl)
-
-
-
+// quand je clique sur la barre espace
+document.addEventListener('keydown', function (event) {
+    if (event.keyCode == 32) {
+        var sceneEl = document.querySelector('a-scene');
+        var entityEl = document.createElement('a-entity');
+        sceneEl.appendChild(entityEl);
+    }
+});
 
