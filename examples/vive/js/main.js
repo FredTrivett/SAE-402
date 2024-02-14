@@ -1,6 +1,7 @@
 
 
 // quand je clique sur la barre espace
+let scaleRatio = 0.6;
 
 
 
@@ -15,9 +16,6 @@ function createObject(common, object) {
     entity.setAttribute('material', common.material);
     entity.setAttribute('class', common.class);
     entity.setAttribute('id', object.name + '-box');
-    entity.setAttribute('scale', common.hbScale);
-
-
 
 
     let entityChild = document.createElement('a-entity');
@@ -49,9 +47,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.15,
-            "height": 0.1,
-            "depth": 0.15
+            "width": 0.15 * scaleRatio,
+            "height": 0.1 * scaleRatio,
+            "depth": 0.15 * scaleRatio
         }
     },
 
@@ -69,7 +67,7 @@ let object = {
         },
         "geometry": {
             "primitive": "sphere",
-            "radius": 0.2
+            "radius": 0.2 * scaleRatio
         }
     },
 
@@ -87,9 +85,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.4,
-            "height": 0.1,
-            "depth": 0.4
+            "width": 0.4 * scaleRatio,
+            "height": 0.1 * scaleRatio,
+            "depth": 0.4 * scaleRatio
         }
     },
 
@@ -107,9 +105,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.1,
-            "height": 0.3,
-            "depth": 0.3
+            "width": 0.1 * scaleRatio,
+            "height": 0.3 * scaleRatio,
+            "depth": 0.3 * scaleRatio
         }
     },
 
@@ -127,9 +125,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.3,
-            "height": 0.25,
-            "depth": 0.5
+            "width": 0.3 * scaleRatio,
+            "height": 0.25 * scaleRatio,
+            "depth": 0.5 * scaleRatio
         }
     },
 
@@ -147,9 +145,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.1,
-            "height": 0.1,
-            "depth": 0.6
+            "width": 0.1 * scaleRatio,
+            "height": 0.1 * scaleRatio,
+            "depth": 0.6 * scaleRatio
         }
     },
 
@@ -167,9 +165,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.4,
-            "height": 0.1,
-            "depth": 0.15
+            "width": 0.4 * scaleRatio,
+            "height": 0.1 * scaleRatio,
+            "depth": 0.15 * scaleRatio
         }
     },
 
@@ -182,13 +180,13 @@ let object = {
         },
         "childPosition": {
             "x": 0,
-            "y": -0.35,
+            "y": -0.2,
             "z": 0
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1,
-            "height": 0.7
+            "radius": 0.1 * scaleRatio,
+            "height": 0.7 * scaleRatio
         }
     },
 
@@ -206,9 +204,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.5,
-            "height": 0.4,
-            "depth": 0.15
+            "width": 0.5 * scaleRatio,
+            "height": 0.4 * scaleRatio,
+            "depth": 0.15 * scaleRatio
         }
     },
 
@@ -221,13 +219,13 @@ let object = {
         },
         "childPosition": {
             "x": 0,
-            "y": -0.1,
+            "y": -0.05,
             "z": 0
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1,
-            "height": 0.5
+            "radius": 0.1 * scaleRatio,
+            "height": 0.5 * scaleRatio
         }
     },
 
@@ -245,8 +243,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1,
-            "height": 0.3
+            "radius": 0.1 * scaleRatio,
+            "height": 0.3 * scaleRatio
         }
     },
 
@@ -264,7 +262,7 @@ let object = {
         },
         "geometry": {
             "primitive": "sphere",
-            "radius": 0.15
+            "radius": 0.15 * scaleRatio
         }
     },
 
@@ -282,9 +280,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.2,
-            "height": 0.05,
-            "depth": 0.25
+            "width": 0.2 * scaleRatio,
+            "height": 0.05 * scaleRatio,
+            "depth": 0.25 * scaleRatio
         }
     },
 
@@ -302,8 +300,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1,
-            "height": 0.35
+            "radius": 0.1 * scaleRatio,
+            "height": 0.35 * scaleRatio
         }
     },
 
@@ -321,9 +319,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.4,
-            "height": 0.1,
-            "depth": 0.25
+            "width": 0.4 * scaleRatio,
+            "height": 0.1 * scaleRatio,
+            "depth": 0.25 * scaleRatio
         }
     },
 
@@ -341,8 +339,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.15,
-            "height": 0.4
+            "radius": 0.15 * scaleRatio,
+            "height": 0.4 * scaleRatio
         }
     },
 
@@ -355,13 +353,13 @@ let object = {
         },
         "childPosition": {
             "x": 0,
-            "y": -0.25,
+            "y": -0.0,
             "z": 0
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1,
-            "height": 0.5
+            "radius": 0.1 * scaleRatio,
+            "height": 0.5 * scaleRatio
         }
     },
 
@@ -379,15 +377,14 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1,
-            "height": 0.7
+            "radius": 0.1 * scaleRatio,
+            "height": 0.7 * scaleRatio
         }
     }
 
 
 }
 
-let scaleRatio = 0.6;
 
 
 let common = {
@@ -400,13 +397,7 @@ let common = {
         "x": 0.5 * scaleRatio,
         "y": 0.5 * scaleRatio,
         "z": 0.5 * scaleRatio
-    },
-
-    "hbScale": {
-        "x": 1 * scaleRatio,
-        "y": 1 * scaleRatio,
-        "z": 1 * scaleRatio
-    },
+    }
 }
 
 // document.addEventListener('keydown', function (event) {
