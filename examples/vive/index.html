@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
   <title>Examples • Tracked controls</title>
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  <script src="../../dist/aframe-extras.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
 </head>
 
 <body>
-  <a-scene id="scene" physics="debug: true">
+  <a-scene id="scene" physics="gravity: -2; debug: true">
 
 
     <a-assets>
@@ -46,24 +46,16 @@
 
     <!-- Player -->
     <a-entity camera look-controls wasd-controls position="0 2 0"></a-entity>
-    <a-entity rotation="-45 0 0" static-body="shape: sphere; sphereRadius: 0.02;"
-      hand-controls="hand: left; handModelStyle: lowPoly;" sphere-collider="objects: .cube;" grab></a-entity>
-    <a-entity rotation="45 45 0" static-body="shape: sphere; sphereRadius: 0.02;"
-      hand-controls="hand: right; handModelStyle: lowPoly;" sphere-collider="objects: .cube;" grab></a-entity>
+    <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: left; handModelStyle: lowPoly;"
+      sphere-collider="objects: .cube;" grab></a-entity>
+    <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: right; handModelStyle: highPoly;"
+      sphere-collider="objects: .cube;" grab></a-entity>
 
 
 
     <a-box class="cube" dynamic-body position="0 10.25 -1" width="0.5" height="0.5" depth="0.5" color="red"></a-box>
     <a-box class="cube" dynamic-body position="-1 10.25 -1" width="0.5" height="0.5" depth="0.5" color="green"></a-box>
 
-
-
-    <!-- ENTITES -->
-
-
-    <a-entity id="other-box" class="cube" static-body position="0 1.6 0"
-      geometry="primitive: ring; radius-inner: 1; radius-outer: 2">
-    </a-entity>
 
 
 

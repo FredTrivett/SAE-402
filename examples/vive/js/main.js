@@ -20,7 +20,6 @@ function createObject(common, object) {
 
     let entityChild = document.createElement('a-entity');
     entityChild.setAttribute('gltf-model', '#' + object.name + '-glb');
-    entityChild.setAttribute('class', common.class);
     entityChild.setAttribute('id', object.name + '-object');
     entityChild.setAttribute('scale', common.scale);
     entityChild.setAttribute('position', object.childPosition);
