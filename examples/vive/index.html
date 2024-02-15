@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <a-scene id="scene" physics="gravity: -2; debug: true">
+  <a-scene id="scene" physics="gravity: -10; debug: true">
 
 
     <a-assets>
@@ -40,6 +40,14 @@
       <a-asset-item id="table" src="environment/table.glb"></a-asset-item>
 
 
+      <!-- poubelles -->
+      <a-asset-item id="bin_blue" src="environment/bin_blue.glb"></a-asset-item>
+      <a-asset-item id="bin_green" src="environment/bin_green.glb"></a-asset-item>
+      <a-asset-item id="bin_red" src="environment/bin_red.glb"></a-asset-item>
+      <a-asset-item id="bin_yellow" src="environment/bin_yellow.glb"></a-asset-item>
+      <a-asset-item id="bin_pink" src="environment/bin_pink.glb"></a-asset-item>
+      <a-asset-item id="bin_orange" src="environment/bin_orange.glb"></a-asset-item>
+
 
 
     </a-assets>
@@ -57,9 +65,6 @@
     <a-box class="cube" dynamic-body position="-1 10.25 -1" width="0.5" height="0.5" depth="0.5" color="green"></a-box>
 
 
-
-
-
     <!-- <a-entity static-body gltf-model="#table" scale="1 1 1" position="0 1 0"> </a-entity> -->
 
 
@@ -67,6 +72,21 @@
     <a-grid static-body></a-grid>
     <a-sky color="#87ceeb"></a-sky>
     <a-entity static-body gltf-model="#park" scale="10 10 10" position="0 19 0"></a-entity>
+
+    <!-- Poubelles -->
+    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_blue"
+      scale="0.3 0.3 0.3" position="0.4 0.5 -1"></a-entity>
+    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_green"
+      scale="0.3 0.3 0.3" position="-0.4 0.5 -1"></a-entity>
+    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_red"
+      scale="0.3 0.3 0.3" position="1.2 0.5 -1"></a-entity>
+    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_pink"
+      scale="0.3 0.3 0.3" position="-1.2 0.5 -1"></a-entity>
+    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_yellow"
+      scale="0.3 0.3 0.3" position="2 0.5 -1"></a-entity>
+    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_orange"
+      scale="0.3 0.3 0.3" position="-2 0.5 -1"></a-entity>
+
 
     <!-- Lighting -->
     <a-entity light="type: point; color: #f4f4f4; intensity: 0.2; distance: 0" position="8 10 18"></a-entity>
