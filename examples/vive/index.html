@@ -39,6 +39,12 @@
       <a-asset-item id="park" src="environment/park.glb"></a-asset-item>
       <a-asset-item id="table" src="environment/table.glb"></a-asset-item>
 
+      <a-asset-item id="bin_blue" src="environment/bin_blue.glb"></a-asset-item>
+      <a-asset-item id="bin_green" src="environment/bin_green.glb"></a-asset-item>
+      <a-asset-item id="bin_red" src="environment/bin_red.glb"></a-asset-item>
+      <a-asset-item id="bin_yellow" src="environment/bin_yellow.glb"></a-asset-item>
+      <a-asset-item id="bin_pink" src="environment/bin_pink.glb"></a-asset-item>
+      <a-asset-item id="bin_orange" src="environment/bin_orange.glb"></a-asset-item>
 
 
 
@@ -67,6 +73,15 @@
     <a-grid static-body></a-grid>
     <a-sky color="#87ceeb"></a-sky>
     <a-entity static-body gltf-model="#park" scale="10 10 10" position="0 19 0"></a-entity>
+
+    <!-- Bins -->
+    <a-entity static-body gltf-model="#bin_blue" scale="0.3 0.3 0.3" position="0.4 0.5 -1"></a-entity>
+    <a-entity static-body gltf-model="#bin_green" scale="0.3 0.3 0.3" position="-0.4 0.5 -1"></a-entity>
+    <a-entity static-body gltf-model="#bin_red" scale="0.3 0.3 0.3" position="1.2 0.5 -1"></a-entity>
+    <a-entity static-body gltf-model="#bin_pink" scale="0.3 0.3 0.3" position="-1.2 0.5 -1"></a-entity>
+    <a-entity static-body gltf-model="#bin_yellow" scale="0.3 0.3 0.3" position="2 0.5 -1"></a-entity>
+    <a-entity static-body gltf-model="#bin_orange" scale="0.3 0.3 0.3" position="-2 0.5 -1"></a-entity>
+
 
     <!-- Lighting -->
     <a-entity light="type: point; color: #f4f4f4; intensity: 0.2; distance: 0" position="8 10 18"></a-entity>
