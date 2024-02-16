@@ -35,9 +35,9 @@ let object = {
     0: {
         "name": "postit",
         "boxPosition": {
-            "x": 1,
-            "y": 12.25,
-            "z": 1
+            "x": 1.4,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -55,9 +55,9 @@ let object = {
     1: {
         "name": "peach",
         "boxPosition": {
-            "x": 1,
-            "y": 11.25,
-            "z": 1
+            "x": 1.2,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -74,8 +74,8 @@ let object = {
         "name": "paper",
         "boxPosition": {
             "x": 1,
-            "y": 10.25,
-            "z": 1
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -93,9 +93,9 @@ let object = {
     3: {
         "name": "obergine",
         "boxPosition": {
-            "x": 1,
-            "y": 9.25,
-            "z": 1
+            "x": 0.8,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -113,9 +113,9 @@ let object = {
     4: {
         "name": "mac",
         "boxPosition": {
-            "x": 1,
-            "y": 8.25,
-            "z": 1
+            "x": 0.6,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -133,9 +133,9 @@ let object = {
     5: {
         "name": "knife",
         "boxPosition": {
-            "x": 1,
-            "y": 7.25,
-            "z": 1
+            "x": 0.4,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -153,9 +153,9 @@ let object = {
     6: {
         "name": "keyboard",
         "boxPosition": {
-            "x": 1,
-            "y": 6.25,
-            "z": 1
+            "x": 0.2,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -173,9 +173,9 @@ let object = {
     7: {
         "name": "ketchup",
         "boxPosition": {
-            "x": 1,
-            "y": 5.25,
-            "z": 1
+            "x": 0,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -192,9 +192,9 @@ let object = {
     8: {
         "name": "headphones",
         "boxPosition": {
-            "x": 1,
-            "y": 4.25,
-            "z": 1
+            "x": -0.2,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -212,9 +212,9 @@ let object = {
     9: {
         "name": "glass",
         "boxPosition": {
-            "x": 1,
-            "y": 3.25,
-            "z": 1
+            "x": -0.4,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -231,9 +231,9 @@ let object = {
     10: {
         "name": "coca",
         "boxPosition": {
-            "x": 1,
-            "y": 2.25,
-            "z": 1
+            "x": -0.6,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -250,9 +250,9 @@ let object = {
     11: {
         "name": "brocolis",
         "boxPosition": {
-            "x": 1,
-            "y": 1.25,
-            "z": 1
+            "x": -0.8,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -269,8 +269,8 @@ let object = {
         "name": "book",
         "boxPosition": {
             "x": -1,
-            "y": 1.25,
-            "z": 1
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -288,9 +288,9 @@ let object = {
     13: {
         "name": "bocale",
         "boxPosition": {
-            "x": -1,
-            "y": 1.25,
-            "z": -1
+            "x": -1.2,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -307,9 +307,9 @@ let object = {
     14: {
         "name": "bag",
         "boxPosition": {
-            "x": -1,
-            "y": 1.25,
-            "z": 0
+            "x": -1.4,
+            "y": 2.5,
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -327,9 +327,9 @@ let object = {
     15: {
         "name": "tin",
         "boxPosition": {
-            "x": 1,
-            "y": 13.25,
-            "z": 1
+            "x": -1,
+            "y": 2.5,
+            "z": 1.8
         },
         "childPosition": {
             "x": 0,
@@ -346,9 +346,9 @@ let object = {
     16: {
         "name": "water",
         "boxPosition": {
-            "x": 1,
-            "y": 14.25,
-            "z": 1
+            "x": -0.8,
+            "y": 2.5,
+            "z": 1.8
         },
         "childPosition": {
             "x": 0,
@@ -365,9 +365,9 @@ let object = {
     17: {
         "name": "wine",
         "boxPosition": {
-            "x": 1,
-            "y": 15.25,
-            "z": 1
+            "x": -0.6,
+            "y": 2.5,
+            "z": 1.8
         },
         "childPosition": {
             "x": 0,
