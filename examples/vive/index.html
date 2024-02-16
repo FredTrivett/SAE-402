@@ -48,6 +48,9 @@
       <a-asset-item id="bin_pink" src="environment/bin_pink.glb"></a-asset-item>
       <a-asset-item id="bin_orange" src="environment/bin_orange.glb"></a-asset-item>
 
+      <!-- plaquette -->
+      <a-asset-item id="plaquette" src="environment/plaquette.glb"></a-asset-item>
+
 
 
     </a-assets>
@@ -71,7 +74,10 @@
     <!-- Terrain -->
     <a-grid static-body></a-grid>
     <a-sky color="#87ceeb"></a-sky>
-    <a-entity static-body gltf-model="#park" scale="10 10 10" position="0 19 0"></a-entity>
+    <a-entity static-body gltf-model="#park" scale="5 5 5" position="0 9.5 0"></a-entity>
+
+    <!-- plaquette -->
+    <a-entity static-body gltf-model="#plaquette" scale="0.5 0.5 0.5" class="cube" position="0 1 0"></a-entity>
 
 
 
