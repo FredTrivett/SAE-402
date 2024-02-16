@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <a-scene id="scene" physics="gravity: -10; debug: true">
+  <a-scene id="scene" physics="gravity: -5; debug: true">
 
 
     <a-assets>
@@ -53,7 +53,7 @@
     </a-assets>
 
     <!-- Player -->
-    <a-entity camera look-controls wasd-controls position="0 2 0"></a-entity>
+    <a-entity camera look-controls wasd-controls position="0 2 1"></a-entity>
     <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: left; handModelStyle: lowPoly;"
       sphere-collider="objects: .cube;" grab></a-entity>
     <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: right; handModelStyle: highPoly;"
@@ -73,40 +73,14 @@
     <a-sky color="#87ceeb"></a-sky>
     <a-entity static-body gltf-model="#park" scale="10 10 10" position="0 19 0"></a-entity>
 
-    <!-- Poubelles -->
-    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_blue"
-      scale="0.3 0.3 0.3" position="0.4 0.5 -1"></a-entity>
-    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_green"
-      scale="0.3 0.3 0.3" position="-0.4 0.5 -1"></a-entity>
-    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_red"
-      scale="0.3 0.3 0.3" position="1.2 0.5 -1"></a-entity>
-    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_pink"
-      scale="0.3 0.3 0.3" position="-1.2 0.5 -1"></a-entity>
-    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_yellow"
-      scale="0.3 0.3 0.3" position="2 0.5 -1"></a-entity>
-    <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" static-body gltf-model="#bin_orange"
-      scale="0.3 0.3 0.3" position="-2 0.5 -1"></a-entity>
+
 
     <a-entity geometry="primitive: box; width: 13; height: 4; depth: 4" static-body scale="0.3 0.3 0.3"
       position="0 0.5 1.8"></a-entity>
     <a-entity geometry="primitive: box; width: 13; height: 4; depth: 1" static-body scale="0.3 0.3 0.3"
       position="0 1 2.5"></a-entity>
 
-    <a-entity position="-2 0.5 -3">
-      <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 0.3" static-body scale="0.3 0.3 0.3"
-        position="-2 0.5 -3"></a-entity>
-      <a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 0.3" static-body scale="0.3 0.3 0.3"
-        position="-2 0.5 -4"></a-entity>
 
-      <a-entity geometry="primitive: box; width: 0.3; height: 4; depth: 3.5" static-body scale="0.3 0.3 0.3"
-        position="-1.6 0.5 -3.5"></a-entity>
-      <a-entity geometry="primitive: box; width: 0.3; height: 4; depth: 3.5" static-body scale="0.3 0.3 0.3"
-        position="-2.4 0.5 -3.5"></a-entity>
-
-      <a-entity geometry="primitive: box; width: 2.6; height: 0.3; depth: 3.5" static-body scale="0.3 0.3 0.3"
-        position="-2 0.2 -3.5"></a-entity>
-
-    </a-entity>
     <!-- Lighting -->
     <a-entity light="type: point; color: #f4f4f4; intensity: 0.2; distance: 0" position="8 10 18"></a-entity>
     <a-entity light="type: point; color: #f4f4f4; intensity: 0.6; distance: 0" position="-8 10 -18"></a-entity>

@@ -31,6 +31,39 @@ function createObject(common, object) {
     SCENE.appendChild(entity);
 }
 
+function createTrash(common, trashes) {
+    const SCENE = document.querySelector('a-scene');
+
+    let parent = document.createElement('a-entity');
+    parent.setAttribute('position', trashes.itemPosition);
+    parent.setAttribute('rotation', { x: 30, y: 0, z: 0 });
+
+
+
+    let entity = document.createElement('a-entity');
+    entity.setAttribute('gltf-model', '#' + trashes.model);
+    entity.setAttribute('scale', trashes.objectScale);
+    entity.setAttribute('id', trashes.model + '-box');
+
+    parent.appendChild(entity);
+
+
+
+    for (let elt in trashes.boxesData) {
+        let entityChild = document.createElement('a-entity');
+        entityChild.setAttribute('material', common.material);
+        entityChild.setAttribute('geometry', trashes.boxesData[elt].geometry);
+        entityChild.setAttribute('static-body', {});
+        entityChild.setAttribute('position', trashes.boxesData[elt].position);
+        entityChild.setAttribute('scale', common.trash.boxesSizes);
+        parent.appendChild(entityChild);
+
+    }
+
+    SCENE.appendChild(parent);
+}
+
+
 let object = {
     0: {
         "name": "postit",
@@ -384,8 +417,6 @@ let object = {
 
 }
 
-
-
 let common = {
     "class": "cube",
     "material": {
@@ -396,8 +427,537 @@ let common = {
         "x": 0.5 * scaleRatio,
         "y": 0.5 * scaleRatio,
         "z": 0.5 * scaleRatio
+    },
+    "trash": {
+        "boxesSizes": {
+            "x": 0.3,
+            "y": 0.3,
+            "z": 0.3
+        },
+        "geometry": {
+
+        }
     }
 }
+
+let trashes = {
+    0: {
+        "itemPosition": {
+            "x": -2.5,
+            "y": 0.5,
+            "z": -3
+        },
+
+        "boxesData": {
+            1: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": 0.35
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            2: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": -0.25
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            3: {
+                "position": {
+                    "x": 0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            4: {
+                "position": {
+                    "x": -0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            5: {
+                "position": {
+                    "x": 0,
+                    "y": -0.2,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 0.3,
+                    "depth": 2
+                }
+            }
+
+        },
+        "model": "bin_orange",
+        "objectScale": {
+            "x": 0.3,
+            "y": 0.3,
+            "z": 0.5
+        }
+    },
+    1: {
+        "itemPosition": {
+            "x": -1.5,
+            "y": 0.5,
+            "z": -3
+        },
+
+        "boxesData": {
+            1: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": 0.35
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            2: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": -0.25
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            3: {
+                "position": {
+                    "x": 0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            4: {
+                "position": {
+                    "x": -0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            5: {
+                "position": {
+                    "x": 0,
+                    "y": -0.2,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 0.3,
+                    "depth": 2
+                }
+            }
+
+        },
+        "model": "bin_blue",
+        "objectScale": {
+            "x": 0.3,
+            "y": 0.3,
+            "z": 0.5
+        }
+    },
+    2: {
+        "itemPosition": {
+            "x": -0.5,
+            "y": 0.5,
+            "z": -3
+        },
+
+        "boxesData": {
+            1: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": 0.35
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            2: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": -0.25
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            3: {
+                "position": {
+                    "x": 0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            4: {
+                "position": {
+                    "x": -0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            5: {
+                "position": {
+                    "x": 0,
+                    "y": -0.2,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 0.3,
+                    "depth": 2
+                }
+            }
+
+        },
+        "model": "bin_green",
+        "objectScale": {
+            "x": 0.3,
+            "y": 0.3,
+            "z": 0.5
+        }
+    },
+    3: {
+        "itemPosition": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": -3
+        },
+
+        "boxesData": {
+            1: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": 0.35
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            2: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": -0.25
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            3: {
+                "position": {
+                    "x": 0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            4: {
+                "position": {
+                    "x": -0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            5: {
+                "position": {
+                    "x": 0,
+                    "y": -0.2,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 0.3,
+                    "depth": 2
+                }
+            }
+
+        },
+        "model": "bin_pink",
+        "objectScale": {
+            "x": 0.3,
+            "y": 0.3,
+            "z": 0.5
+        }
+    },
+    4: {
+        "itemPosition": {
+            "x": 1.5,
+            "y": 0.5,
+            "z": -3
+        },
+
+        "boxesData": {
+            1: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": 0.35
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            2: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": -0.25
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            3: {
+                "position": {
+                    "x": 0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            4: {
+                "position": {
+                    "x": -0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            5: {
+                "position": {
+                    "x": 0,
+                    "y": -0.2,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 0.3,
+                    "depth": 2
+                }
+            }
+
+        },
+        "model": "bin_red",
+        "objectScale": {
+            "x": 0.3,
+            "y": 0.3,
+            "z": 0.5
+        }
+    },
+    5: {
+        "itemPosition": {
+            "x": 2.5,
+            "y": 0.5,
+            "z": -3
+        },
+
+        "boxesData": {
+            1: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": 0.35
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            2: {
+                "position": {
+                    "x": 0,
+                    "y": 0.1,
+                    "z": -0.25
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 4,
+                    "depth": 0.3
+                }
+            },
+            3: {
+                "position": {
+                    "x": 0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            4: {
+                "position": {
+                    "x": -0.35,
+                    "y": 0.1,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 0.3,
+                    "height": 4,
+                    "depth": 2
+                }
+            },
+            5: {
+                "position": {
+                    "x": 0,
+                    "y": -0.2,
+                    "z": 0
+                },
+                "geometry": {
+                    "primitive": "box",
+                    "width": 2.6,
+                    "height": 0.3,
+                    "depth": 2
+                }
+            }
+
+        },
+        "model": "bin_yellow",
+        "objectScale": {
+            "x": 0.3,
+            "y": 0.3,
+            "z": 0.5
+        }
+    },
+
+}
+
+
+
+{/* <a-entity position="-2 0.5 -1">
+<a-entity geometry="primitive: box; width: 2.6; height: 4; depth: 1.4" gltf-model="#bin_orange"
+  scale="0.3 0.3 0.5"></a-entity>
+
+<a-entity material="transparent:true; opacity:0;" geometry="primitive: box; width: 2.6; height: 4; depth: 0.3"
+  static-body scale="0.3 0.3 0.3" position="0 0.1 0.35"></a-entity>
+
+<a-entity material="transparent:true; opacity:0;" geometry="primitive: box; width: 2.6; height: 4; depth: 0.3"
+  static-body scale="0.3 0.3 0.3" position="0 0.1 -0.25"></a-entity>
+
+<a-entity material="transparent:true; opacity:0;" geometry="primitive: box; width: 0.3; height: 4; depth: 2"
+  static-body scale="0.3 0.3 0.3" position="0.35 0.1 0"></a-entity>
+
+<a-entity material="transparent:true; opacity:0;" geometry="primitive: box; width: 0.3; height: 4; depth: 2"
+  static-body scale="0.3 0.3 0.3" position="-0.35 0.1 0"></a-entity>
+
+<a-entity material="transparent:true; opacity:0;" geometry="primitive: box; width: 2.6; height: 0.3; depth: 2"
+  static-body scale="0.3 0.3 0.3" position="-0 -0.2 0"></a-entity>
+
+</a-entity> */}
 
 // document.addEventListener('keydown', function (event) {
 //     if (event.keyCode == 32) {
@@ -407,4 +967,8 @@ let common = {
 
 for (let i = 0; i < Object.keys(object).length; i++) {
     createObject(common, object[i]);
+}
+
+for (let i = 0; i < Object.keys(trashes).length; i++) {
+    createTrash(common, trashes[i]);
 }
