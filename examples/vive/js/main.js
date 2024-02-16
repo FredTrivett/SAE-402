@@ -972,3 +972,10 @@ for (let i = 0; i < Object.keys(object).length; i++) {
 for (let i = 0; i < Object.keys(trashes).length; i++) {
     createTrash(common, trashes[i]);
 }
+
+var playerEl = document.querySelector('#ererer');
+playerEl.addEventListener('collide', function (e) {
+    console.log('Player has collided with body #' + e.detail.body.el.id);
+    document.getElementById(e.detail.body.el.id).remove();
+
+});
