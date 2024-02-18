@@ -965,11 +965,17 @@ playerEl.addEventListener('collide', function (e) {
 
 document.querySelectorAll('.trashHitbox').forEach(item => {
     item.addEventListener('collide', function (e) {
-        document.querySelector('#text').setAttribute('text', 'value: ' + e.detail.body.el.id);
+        setTimeout(function () {
+            document.querySelector('#text').setAttribute('text', 'value: ' + e.detail.body.el.id);
+            console.log(e.detail.target.el.id + ' has collided with body #' + e.detail.body.el.id);
+            // delete element
+            let element = document.querySelector('#' + e.detail.body.el.id);
+            element.parentNode.removeChild(element);
+        }, 0);
 
-        console.log(e.detail.target.el.id + ' has collided with body #' + e.detail.body.el.id);
     });
 });
+
 
 
 
