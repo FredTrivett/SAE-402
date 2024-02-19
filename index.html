@@ -72,22 +72,21 @@
 
     <!-- PLAQUETTE -->
     <a-entity dynamic-body geometry="primitive: box; width: 1.8; height: 0.8; depth: 0.2" gltf-model="#plaquette"
-      scale="0.2 0.2 0.1" class="cube" position="0 1 0"></a-entity>
+      scale="0.2 0.2 0.1" class="cube" position="0 1 -0.8"></a-entity>
 
     <!-- TEXT -->
     <a-entity id="text" position="1 2 -3" scale="3 3 3" text="value: Hello World;"></a-entity>
 
-
     <!-- TABLE -->
     <a-entity geometry="primitive: box; width: 13; height: 4; depth: 4" static-body scale="0.3 0.3 0.3"
       position="0 0.5 1.8"></a-entity>
-    <a-entity geometry="primitive: box; width: 13; height: 6; depth: 1" static-body scale="0.3 0.3 0.3"
-      position="0 0.5 2.5"></a-entity>
+    <a-entity static-body scale="0.3 0.3 0.3" position="0 0.5 2.5"></a-entity>
 
     <a-entity gltf-model="#table_metal" scale="3 2 2" position="0 0.7 1.8"></a-entity>
 
     <!-- pedestal -->
-    <a-entity gltf-model="#pedestal" scale="0.5 0.5 0.5" position="0 0 -0.8"></a-entity>
+    <a-entity geometry="primitive: box; width: 2; height: 3.6; depth: 2" static-body gltf-model="#pedestal"
+      scale="0.5 0.5 0.5" position="0 0 -0.8"></a-entity>
 
 
     <!-- TERRAIN -->
