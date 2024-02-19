@@ -3,7 +3,9 @@
 // quand je clique sur la barre espace
 let scaleRatio = 0.6;
 
+// import le fichier json !!
 
+let objects = fetch('./data/objects.json');
 
 function createObject(common, object) {
     const SCENE = document.querySelector('a-scene');
@@ -986,12 +988,16 @@ playerEl.addEventListener('collide', function (e) {
         let id = e.detail.body.el.id;
         let element = e.detail.body.el;
 
-        element.parentNode.removeChild(element);
+        console.log(id);
+        if (id != 'plaquette') {
+            element.parentNode.removeChild(element);
+
+        }
 
         for (let elt in object) {
-            console.log(object[elt].name + '-box');
-            console.log(id);
             if (id == object[elt].name + '-box') {
+                console.log(e.detail.body.el.id);
+                console.log(id);
                 createObject(common, object[elt]);
 
             }
@@ -1017,10 +1023,10 @@ document.querySelectorAll('.trashHitbox').forEach(item => {
             // if the trahs and the object have the same class add 1 to the score else remove 1
             if (Trashclass == Objectclass) {
                 score += 1;
-                document.querySelector('#text').setAttribute('text', 'value: ' + score);
+                document.querySelector('#text').setAttribute('text', 'value:Points: ' + score);
             } else if (Trashclass != Objectclass) {
                 score -= 1;
-                document.querySelector('#text').setAttribute('text', 'value: ' + score);
+                document.querySelector('#text').setAttribute('text', 'value:Points: ' + score);
             }
             console.log(score);
         }, 0);

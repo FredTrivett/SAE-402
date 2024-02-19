@@ -69,12 +69,13 @@
     <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: right; handModelStyle: highPoly;"
       sphere-collider="objects: .cube;" grab>
       <!-- TEXT -->
-      <a-entity id="text" position="1 0 0" scale="1 1 1" text="value: Hello World;"></a-entity></a-entity>
+      <a-entity id="text" position="0.3 0.2 0" rotation="-10 0 0" scale="1 1 1"
+        text="value:Points: ;"></a-entity></a-entity>
 
 
     <!-- PLAQUETTE -->
-    <a-entity dynamic-body geometry="primitive: box; width: 1.8; height: 0.8; depth: 0.2" gltf-model="#plaquette"
-      scale="0.2 0.2 0.1" rotation="45 0 180" class="cube" position="0 1 -0.8"></a-entity>
+    <a-entity dynamic-body id="plaquette" geometry="primitive: box; width: 1.8; height: 0.8; depth: 0.2"
+      gltf-model="#plaquette" scale="0.2 0.2 0.1" rotation="45 0 180" class="cube" position="0 1 -0.8"></a-entity>
 
     <a-entity geometry="primitive: box; width: 7; height: 3; depth: 0.1" rotation="30 0 0" static-body
       position="0 0.5 -3.5"></a-entity>
