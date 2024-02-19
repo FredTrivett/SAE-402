@@ -80,7 +80,7 @@ let object = {
         "boxPosition": {
             "x": 1.4,
             "y": 2.5,
-            "z": 1
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -99,9 +99,9 @@ let object = {
     1: {
         "name": "peach",
         "boxPosition": {
-            "x": 2.5,
+            "x": 1.6,
             "y": 2.5,
-            "z": -2.6
+            "z": 2
         },
         "childPosition": {
             "x": 0,
@@ -981,8 +981,21 @@ for (let i = 0; i < Object.keys(trashes).length; i++) {
 
 var playerEl = document.querySelector('#ground');
 playerEl.addEventListener('collide', function (e) {
-    console.log(e.detail.target.el.id + ' has collided with body #' + e.detail.body.el.id);
+    setTimeout(function () {
+        let id = e.detail.body.el.id;
+        let element = e.detail.body.el;
 
+        element.parentNode.removeChild(element);
+
+        for (let elt in object) {
+            console.log(object[elt].name + '-box');
+            console.log(id);
+            if (id == object[elt].name + '-box') {
+                createObject(common, object[elt]);
+
+            }
+        }
+    }, 0);
 
 });
 
@@ -990,7 +1003,6 @@ document.querySelectorAll('.trashHitbox').forEach(item => {
     item.addEventListener('collide', function (e) {
         setTimeout(function () {
             document.querySelector('#text').setAttribute('text', 'value: ' + e.detail.body.el.id);
-            console.log(e.detail.target.el.id + ' has collided with body #' + e.detail.body.el.id);
             // delete element
             let element = document.querySelector('#' + e.detail.body.el.id);
             element.parentNode.removeChild(element);
