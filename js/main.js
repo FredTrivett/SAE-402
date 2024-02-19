@@ -38,7 +38,7 @@ function createTrash(common, trashes) {
     let parent = document.createElement('a-entity');
     parent.setAttribute('position', trashes.itemPosition);
     parent.setAttribute('rotation', { x: 30, y: 0, z: 0 });
-    parent.setAttribute('class', trashes.class);
+
 
 
 
@@ -62,7 +62,8 @@ function createTrash(common, trashes) {
 
         if (elt == 5) {
             entityChild.setAttribute('id', trashes.model + '-bottom');
-            entityChild.setAttribute('class', 'trashHitbox');
+            entityChild.classList.add('trashHitbox');
+            entityChild.classList.add(trashes.class);
 
         }
 
@@ -999,21 +1000,30 @@ playerEl.addEventListener('collide', function (e) {
 
 });
 
+let score = 0;
+
 document.querySelectorAll('.trashHitbox').forEach(item => {
     item.addEventListener('collide', function (e) {
         setTimeout(function () {
-            document.querySelector('#text').setAttribute('text', 'value: ' + e.detail.body.el.id);
+            // document.querySelector('#text').setAttribute('text', 'value: ' + e.detail.body.el.id);
+            console.log(e.detail.target.el.id + ' has collided with body #' + e.detail.body.el.id);
             // delete element
             let element = document.querySelector('#' + e.detail.body.el.id);
+            let Trashclass = e.detail.target.el.classList.item(1);
+            let Objectclass = e.detail.body.el.classList.item(1);
             element.parentNode.removeChild(element);
+
+
+            // if the trahs and the object have the same class add 1 to the score else remove 1
+            if (Trashclass == Objectclass) {
+                score += 1;
+                document.querySelector('#text').setAttribute('text', 'value: ' + score);
+            } else if (Trashclass != Objectclass) {
+                score -= 1;
+                document.querySelector('#text').setAttribute('text', 'value: ' + score);
+            }
+            console.log(score);
         }, 0);
 
     });
 });
-
-
-
-
-
-
-
