@@ -15,6 +15,7 @@ function createObject(common, object) {
     entity.setAttribute('position', object.boxPosition);
     entity.setAttribute('material', common.material);
     entity.setAttribute('class', common.class);
+    entity.setAttribute('class', object.class);
     entity.setAttribute('id', object.name + '-box');
 
 
@@ -38,6 +39,8 @@ function createTrash(common, trashes) {
     parent.setAttribute('position', trashes.itemPosition);
     parent.setAttribute('rotation', { x: 30, y: 0, z: 0 });
     parent.setAttribute('class', 'trash');
+    parent.setAttribute('class', trashes.class);
+
 
 
 
@@ -543,6 +546,7 @@ let trashes = {
 
         },
         "model": "bin_orange",
+        "class": "orange",
         "objectScale": {
             "x": 0.3,
             "y": 0.3,
@@ -625,6 +629,7 @@ let trashes = {
 
         },
         "model": "bin_blue",
+        "class": "blue",
         "objectScale": {
             "x": 0.3,
             "y": 0.3,
@@ -707,6 +712,7 @@ let trashes = {
 
         },
         "model": "bin_green",
+        "class": "green",
         "objectScale": {
             "x": 0.3,
             "y": 0.3,
@@ -789,6 +795,7 @@ let trashes = {
 
         },
         "model": "bin_pink",
+        "class": "pink",
         "objectScale": {
             "x": 0.3,
             "y": 0.3,
@@ -871,6 +878,7 @@ let trashes = {
 
         },
         "model": "bin_red",
+        "class": "red",
         "objectScale": {
             "x": 0.3,
             "y": 0.3,
@@ -953,6 +961,7 @@ let trashes = {
 
         },
         "model": "bin_yellow",
+        "class": "yellow",
         "objectScale": {
             "x": 0.3,
             "y": 0.3,
