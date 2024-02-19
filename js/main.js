@@ -538,7 +538,7 @@ let trashes = {
                 },
                 "geometry": {
                     "primitive": "box",
-                    "width": 2.6,
+                    "width": 2,
                     "height": 0.3,
                     "depth": 2
                 }
@@ -621,7 +621,7 @@ let trashes = {
                 },
                 "geometry": {
                     "primitive": "box",
-                    "width": 2.6,
+                    "width": 2,
                     "height": 0.3,
                     "depth": 2
                 }
@@ -704,7 +704,7 @@ let trashes = {
                 },
                 "geometry": {
                     "primitive": "box",
-                    "width": 2.6,
+                    "width": 2,
                     "height": 0.3,
                     "depth": 2
                 }
@@ -787,7 +787,7 @@ let trashes = {
                 },
                 "geometry": {
                     "primitive": "box",
-                    "width": 2.6,
+                    "width": 2,
                     "height": 0.3,
                     "depth": 2
                 }
@@ -870,7 +870,7 @@ let trashes = {
                 },
                 "geometry": {
                     "primitive": "box",
-                    "width": 2.6,
+                    "width": 2,
                     "height": 0.3,
                     "depth": 2
                 }
@@ -953,7 +953,7 @@ let trashes = {
                 },
                 "geometry": {
                     "primitive": "box",
-                    "width": 2.6,
+                    "width": 2,
                     "height": 0.3,
                     "depth": 2
                 }
