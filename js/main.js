@@ -71,9 +71,6 @@ function createTrash(common, trashes) {
     SCENE.appendChild(parent);
 }
 
-// "x": 1.4,
-//             "y": 2.5,
-//             "z": 1
 
 let object = {
     0: {
@@ -93,7 +90,8 @@ let object = {
             "width": 0.15 * scaleRatio,
             "height": 0.1 * scaleRatio,
             "depth": 0.15 * scaleRatio
-        }
+        },
+        "class": "pink"
     },
 
     1: {
@@ -111,7 +109,8 @@ let object = {
         "geometry": {
             "primitive": "sphere",
             "radius": 0.2 * scaleRatio
-        }
+        },
+        "class": "green"
     },
 
     2: {
@@ -131,7 +130,8 @@ let object = {
             "width": 0.4 * scaleRatio,
             "height": 0.1 * scaleRatio,
             "depth": 0.4 * scaleRatio
-        }
+        },
+        "class": "pink"
     },
 
     3: {
@@ -151,7 +151,8 @@ let object = {
             "width": 0.1 * scaleRatio,
             "height": 0.3 * scaleRatio,
             "depth": 0.3 * scaleRatio
-        }
+        },
+        "class": "green"
     },
 
     4: {
@@ -171,7 +172,8 @@ let object = {
             "width": 0.3 * scaleRatio,
             "height": 0.4 * scaleRatio,
             "depth": 0.5 * scaleRatio
-        }
+        },
+        "class": "blue"
     },
 
     5: {
@@ -191,7 +193,8 @@ let object = {
             "width": 0.1 * scaleRatio,
             "height": 0.1 * scaleRatio,
             "depth": 0.6 * scaleRatio
-        }
+        },
+        "class": "red"
     },
 
     6: {
@@ -211,7 +214,8 @@ let object = {
             "width": 0.4 * scaleRatio,
             "height": 0.1 * scaleRatio,
             "depth": 0.15 * scaleRatio
-        }
+        },
+        "class": "blue"
     },
 
     7: {
@@ -230,7 +234,8 @@ let object = {
             "primitive": "cylinder",
             "radius": 0.1 * scaleRatio,
             "height": 0.7 * scaleRatio
-        }
+        },
+        "class": "yellow"
     },
 
     8: {
@@ -250,7 +255,8 @@ let object = {
             "width": 0.47 * scaleRatio,
             "height": 0.4 * scaleRatio,
             "depth": 0.15 * scaleRatio
-        }
+        },
+        "class": "blue"
     },
 
     9: {
@@ -269,7 +275,8 @@ let object = {
             "primitive": "cylinder",
             "radius": 0.1 * scaleRatio,
             "height": 0.5 * scaleRatio
-        }
+        },
+        "class": "orange"
     },
 
     10: {
@@ -288,7 +295,8 @@ let object = {
             "primitive": "cylinder",
             "radius": 0.1 * scaleRatio,
             "height": 0.3 * scaleRatio
-        }
+        },
+        "class": "red"
     },
 
     11: {
@@ -306,7 +314,8 @@ let object = {
         "geometry": {
             "primitive": "sphere",
             "radius": 0.15 * scaleRatio
-        }
+        },
+        "class": "green"
     },
 
     12: {
@@ -326,7 +335,8 @@ let object = {
             "width": 0.2 * scaleRatio,
             "height": 0.05 * scaleRatio,
             "depth": 0.25 * scaleRatio
-        }
+        },
+        "class": "pink"
     },
 
     13: {
@@ -345,7 +355,8 @@ let object = {
             "primitive": "cylinder",
             "radius": 0.1 * scaleRatio,
             "height": 0.35 * scaleRatio
-        }
+        },
+        "class": "orange"
     },
 
     14: {
@@ -365,7 +376,8 @@ let object = {
             "width": 0.4 * scaleRatio,
             "height": 0.1 * scaleRatio,
             "depth": 0.25 * scaleRatio
-        }
+        },
+        "class": "yellow"
     },
 
     15: {
@@ -384,7 +396,8 @@ let object = {
             "primitive": "cylinder",
             "radius": 0.15 * scaleRatio,
             "height": 0.4 * scaleRatio
-        }
+        },
+        "class": "red"
     },
 
     16: {
@@ -403,7 +416,8 @@ let object = {
             "primitive": "cylinder",
             "radius": 0.1 * scaleRatio,
             "height": 0.5 * scaleRatio
-        }
+        },
+        "class": "yellow"
     },
 
     17: {
@@ -422,7 +436,8 @@ let object = {
             "primitive": "cylinder",
             "radius": 0.1 * scaleRatio,
             "height": 0.7 * scaleRatio
-        }
+        },
+        "class": "orange"
     }
 
 
