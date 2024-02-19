@@ -39,7 +39,7 @@ function createTrash(common, trashes) {
 
     let parent = document.createElement('a-entity');
     parent.setAttribute('position', trashes.itemPosition);
-    parent.setAttribute('rotation', { x: 30, y: 0, z: 0 });
+    parent.setAttribute('rotation', { x: 0, y: 0, z: 0 });
 
 
 

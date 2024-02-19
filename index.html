@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <a-scene cursor="rayOrigin: mouse" id="scene" physics="gravity: -5; debug: true">
+  <a-scene cursor="rayOrigin: mouse" id="scene" physics="gravity: -6; debug: true">
     <a-assets>
       <a-asset-item id="bag-glb" src="items/bag.glb"></a-asset-item>
       <a-asset-item id="bocale-glb" src="items/bocale.glb"></a-asset-item>
@@ -77,7 +77,7 @@
     <a-entity dynamic-body id="plaquette" geometry="primitive: box; width: 1.8; height: 0.8; depth: 0.2"
       gltf-model="#plaquette" scale="0.2 0.2 0.1" rotation="45 0 180" class="cube" position="0 1 -0.8"></a-entity>
 
-    <a-entity geometry="primitive: box; width: 7; height: 3; depth: 0.1" rotation="30 0 0" static-body
+    <a-entity geometry="primitive: box; width: 7; height: 3; depth: 0.5" rotation="2 0 0" static-body
       position="0 0.5 -3.5"></a-entity>
 
     <!-- TABLE -->
