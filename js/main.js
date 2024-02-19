@@ -14,8 +14,8 @@ function createObject(common, object) {
     entity.setAttribute('dynamic-body', {});
     entity.setAttribute('position', object.boxPosition);
     entity.setAttribute('material', common.material);
-    entity.setAttribute('class', common.class);
-    entity.setAttribute('class', object.class);
+    entity.classList.add(common.class);
+    entity.classList.add(object.class);
     entity.setAttribute('id', object.name + '-box');
 
 
@@ -38,7 +38,6 @@ function createTrash(common, trashes) {
     let parent = document.createElement('a-entity');
     parent.setAttribute('position', trashes.itemPosition);
     parent.setAttribute('rotation', { x: 30, y: 0, z: 0 });
-    parent.setAttribute('class', 'trash');
     parent.setAttribute('class', trashes.class);
 
 
