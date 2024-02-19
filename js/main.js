@@ -89,9 +89,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.15 * scaleRatio,
-            "height": 0.1 * scaleRatio,
-            "depth": 0.15 * scaleRatio
+            "width": 0.09,
+            "height": 0.06,
+            "depth": 0.09
         },
         "class": "pink"
     },
@@ -110,7 +110,7 @@ let object = {
         },
         "geometry": {
             "primitive": "sphere",
-            "radius": 0.2 * scaleRatio
+            "radius": 0.12
         },
         "class": "green"
     },
@@ -129,9 +129,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.4 * scaleRatio,
-            "height": 0.1 * scaleRatio,
-            "depth": 0.4 * scaleRatio
+            "width": 0.24,
+            "height": 0.06,
+            "depth": 0.24
         },
         "class": "pink"
     },
@@ -150,9 +150,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.1 * scaleRatio,
-            "height": 0.3 * scaleRatio,
-            "depth": 0.3 * scaleRatio
+            "width": 0.06,
+            "height": 0.18,
+            "depth": 0.18
         },
         "class": "green"
     },
@@ -171,9 +171,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.3 * scaleRatio,
-            "height": 0.4 * scaleRatio,
-            "depth": 0.5 * scaleRatio
+            "width": 0.18,
+            "height": 0.24,
+            "depth": 0.3
         },
         "class": "blue"
     },
@@ -192,9 +192,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.1 * scaleRatio,
-            "height": 0.1 * scaleRatio,
-            "depth": 0.6 * scaleRatio
+            "width": 0.06,
+            "height": 0.06,
+            "depth": 0.36
         },
         "class": "red"
     },
@@ -213,9 +213,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.4 * scaleRatio,
-            "height": 0.1 * scaleRatio,
-            "depth": 0.15 * scaleRatio
+            "width": 0.24,
+            "height": 0.06,
+            "depth": 0.09
         },
         "class": "blue"
     },
@@ -234,8 +234,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1 * scaleRatio,
-            "height": 0.7 * scaleRatio
+            "radius": 0.06,
+            "height": 0.42
         },
         "class": "yellow"
     },
@@ -254,9 +254,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.47 * scaleRatio,
-            "height": 0.4 * scaleRatio,
-            "depth": 0.15 * scaleRatio
+            "width": 0.282,
+            "height": 0.24,
+            "depth": 0.09
         },
         "class": "blue"
     },
@@ -275,8 +275,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1 * scaleRatio,
-            "height": 0.5 * scaleRatio
+            "radius": 0.06,
+            "height": 0.3
         },
         "class": "orange"
     },
@@ -295,8 +295,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1 * scaleRatio,
-            "height": 0.3 * scaleRatio
+            "radius": 0.06,
+            "height": 0.18
         },
         "class": "red"
     },
@@ -315,7 +315,7 @@ let object = {
         },
         "geometry": {
             "primitive": "sphere",
-            "radius": 0.15 * scaleRatio
+            "radius": 0.09
         },
         "class": "green"
     },
@@ -334,9 +334,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.2 * scaleRatio,
-            "height": 0.05 * scaleRatio,
-            "depth": 0.25 * scaleRatio
+            "width": 0.12,
+            "height": 0.03,
+            "depth": 0.15
         },
         "class": "pink"
     },
@@ -355,8 +355,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1 * scaleRatio,
-            "height": 0.35 * scaleRatio
+            "radius": 0.06,
+            "height": 0.21
         },
         "class": "orange"
     },
@@ -375,9 +375,9 @@ let object = {
         },
         "geometry": {
             "primitive": "box",
-            "width": 0.4 * scaleRatio,
-            "height": 0.1 * scaleRatio,
-            "depth": 0.25 * scaleRatio
+            "width": 0.24,
+            "height": 0.06,
+            "depth": 0.15
         },
         "class": "yellow"
     },
@@ -396,8 +396,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.15 * scaleRatio,
-            "height": 0.4 * scaleRatio
+            "radius": 0.09,
+            "height": 0.24
         },
         "class": "red"
     },
@@ -416,8 +416,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1 * scaleRatio,
-            "height": 0.5 * scaleRatio
+            "radius": 0.06,
+            "height": 0.3
         },
         "class": "yellow"
     },
@@ -436,8 +436,8 @@ let object = {
         },
         "geometry": {
             "primitive": "cylinder",
-            "radius": 0.1 * scaleRatio,
-            "height": 0.7 * scaleRatio
+            "radius": 0.06,
+            "height": 0.42
         },
         "class": "orange"
     }
@@ -452,9 +452,9 @@ let common = {
         "opacity": 0
     },
     "scale": {
-        "x": 0.5 * scaleRatio,
-        "y": 0.5 * scaleRatio,
-        "z": 0.5 * scaleRatio
+        "x": 0.3,
+        "y": 0.3,
+        "z": 0.3
     },
     "trash": {
         "boxesSizes": {
