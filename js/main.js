@@ -38,19 +38,18 @@ function groundCollision(e) {
 
 function trashCollision(e) {
     setTimeout(function () {
-        let targetNode = e.detail.body.el;
+        let targetNode = e.detail.target.el;
         let trashclass = e.detail.target.el.classList.item(1);
         let objectclass = e.detail.body.el.classList.item(1);
 
         targetNode.parentNode.removeChild(targetNode);
 
-        let pointsText = document.querySelector('#pointText');
         if (trashclass == objectclass) {
-            score += 2;
+            score += 100;
         } else {
-            score -= 1;
+            score -= 50;
         }
-        pointsText.setAttribute('text', 'value:Points: ' + score);
+        V.setScore(score);
     }, 0);
 
 }

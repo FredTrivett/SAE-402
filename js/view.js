@@ -30,7 +30,7 @@ V.createTrash = function (common, trashes) {
 
     let parent = document.createElement('a-entity');
     parent.setAttribute('position', trashes.itemPosition);
-    parent.setAttribute('rotation', { x: 0, y: 0, z: 0 });
+    parent.setAttribute('rotation', { x: 35, y: 0, z: 0 });
 
     let entity = document.createElement('a-entity');
     entity.setAttribute('gltf-model', '#' + trashes.model);
@@ -58,6 +58,14 @@ V.createTrash = function (common, trashes) {
     }
 
     SCENE.appendChild(parent);
+}
+
+V.setScore = function (score) {
+    if (score < 0) {
+        score = 0;
+    }
+    let pointsText = document.querySelector('#pointsText');
+    pointsText.setAttribute('text', 'value:Points: ' + score);
 }
 
 export { V }

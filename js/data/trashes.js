@@ -3,7 +3,7 @@ let trashes = {
         "itemPosition": {
             "x": -2.5,
             "y": 0.5,
-            "z": -3
+            "z": -2
         },
         "boxesData": {
             "1": {
@@ -84,7 +84,7 @@ let trashes = {
         "itemPosition": {
             "x": -1.5,
             "y": 0.5,
-            "z": -3
+            "z": -2.5
         },
         "boxesData": {
             "1": {
@@ -327,7 +327,7 @@ let trashes = {
         "itemPosition": {
             "x": 1.5,
             "y": 0.5,
-            "z": -3
+            "z": -2.5
         },
         "boxesData": {
             "1": {
@@ -408,7 +408,7 @@ let trashes = {
         "itemPosition": {
             "x": 2.5,
             "y": 0.5,
-            "z": -3
+            "z": -2
         },
         "boxesData": {
             "1": {
