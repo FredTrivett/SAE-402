@@ -12,4 +12,5 @@ function startTimer() {
     updateTimer();
 }
 
-startTimer();
+export default startTimer;
+

@@ -1,6 +1,6 @@
-
-let commons = {
+let common = {
     "class": "cube",
+    "selector": "object",
     "material": {
         "transparent": true,
         "opacity": 0
@@ -20,4 +20,4 @@ let commons = {
     }
 }
 
-export { commons }
+export default common;
