@@ -19,18 +19,20 @@ for (let i = 0; i < Object.keys(trashes).length; i++) {
 
 function groundCollision(e) {
     setTimeout(function () {
-        let targetId = e.detail.body.el.id;
-        let targetNode = e.detail.body.el;
+        let targetId = e.detail.target.el.id;
+        let targetNode = e.detail.target.el;
 
-        if (targetId != 'plaquette') {
-            targetNode.parentNode.removeChild(targetNode);
-        }
+
         for (let object in objects) {
             if (targetId == objects[object].name + '-box') {
-                createObject(common, objects[object]);
+                V.createObject(common, objects[object]);
             }
         }
-    }, 0);
+
+        if (targetId != 'plaquette' && targetId != 'ground') {
+            targetNode.parentNode.removeChild(targetNode);
+        }
+    }, 1);
 
 }
 

@@ -2,7 +2,7 @@ let object = {
     "0": {
         "name": "postit",
         "boxPosition": {
-            "x": -2,
+            "x": 1.4,
             "y": 2.5,
             "z": 2
         },
