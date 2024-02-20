@@ -1,0 +1,23 @@
+
+let commons = {
+    "class": "cube",
+    "material": {
+        "transparent": true,
+        "opacity": 0
+    },
+    "scale": {
+        "x": 0.3,
+        "y": 0.3,
+        "z": 0.3
+    },
+    "trash": {
+        "boxesSizes": {
+            "x": 0.3,
+            "y": 0.3,
+            "z": 0.3
+        },
+        "geometry": {}
+    }
+}
+
+export { commons }

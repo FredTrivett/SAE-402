@@ -1,15 +1,10 @@
+import commons from './data/common.js';
+console.log(commons);
 
 
-// quand je clique sur la barre espace
-let scaleRatio = 0.6;
-
-// import le fichier json !!
-
-let objects = fetch('./data/objects.json');
 
 function createObject(common, object) {
     const SCENE = document.querySelector('a-scene');
-
 
     let entity = document.createElement('a-entity');
     entity.setAttribute('geometry', object.geometry);
@@ -1011,25 +1006,21 @@ let score = 0;
 document.querySelectorAll('.trashHitbox').forEach(item => {
     item.addEventListener('collide', function (e) {
         setTimeout(function () {
-            // document.querySelector('#text').setAttribute('text', 'value: ' + e.detail.body.el.id);
             console.log(e.detail.target.el.id + ' has collided with body #' + e.detail.body.el.id);
-            // delete element
             let element = document.querySelector('#' + e.detail.body.el.id);
             let Trashclass = e.detail.target.el.classList.item(1);
             let Objectclass = e.detail.body.el.classList.item(1);
             element.parentNode.removeChild(element);
 
-
-            // if the trahs and the object have the same class add 1 to the score else remove 1
+            let pointsText = document.querySelector('#pointText');
             if (Trashclass == Objectclass) {
-                score += 1;
-                document.querySelector('#text').setAttribute('text', 'value:Points: ' + score);
+                score += 2;
             } else if (Trashclass != Objectclass) {
                 score -= 1;
-                document.querySelector('#text').setAttribute('text', 'value:Points: ' + score);
             }
-            console.log(score);
+            pointsText.setAttribute('text', 'value:Points: ' + score);
         }, 0);
 
     });
 });
+

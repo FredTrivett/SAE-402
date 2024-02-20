@@ -65,12 +65,16 @@
 
     <!-- HANDS -->
     <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: left; handModelStyle: lowPoly;"
-      sphere-collider="objects: .cube;" grab></a-entity>
-    <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: right; handModelStyle: highPoly;"
       sphere-collider="objects: .cube;" grab>
-      <!-- TEXT -->
-      <a-entity id="text" position="0.3 0.2 0" rotation="-10 0 0" scale="1 1 1"
-        text="value:Points: ;"></a-entity></a-entity>
+
+      <a-entity id="timeText" position="0.3 0.2 0" rotation="-10 0 0" scale="1 1 1" text="value:Time: ;"></a-entity>
+    </a-entity>
+
+    <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: right; handModelStyle: lowPoly;"
+      sphere-collider="objects: .cube;" grab>
+
+      <a-entity id="pointsText" position="0.3 0.2 0" rotation="-10 0 0" scale="1 1 1" text="value:Points: ;"></a-entity>
+    </a-entity>
 
 
     <!-- PLAQUETTE -->
@@ -78,7 +82,7 @@
       gltf-model="#plaquette" scale="0.2 0.2 0.1" rotation="45 0 180" class="cube" position="0 1 -0.8"></a-entity>
 
     <a-entity geometry="primitive: box; width: 7; height: 3; depth: 0.5" rotation="2 0 0" static-body
-      position="0 0.5 -3.5"></a-entity>
+      position="0 0.5 -3.5" material="opacity:0; transparent:true"></a-entity>
 
     <!-- TABLE -->
     <a-entity geometry="primitive: box; width: 13; height: 4; depth: 4" material="opacity:0; transparent:true"
@@ -106,7 +110,9 @@
   </a-scene>
 
 
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
+  <script src="js/timer.js"></script>
+
 
 </body>
 
