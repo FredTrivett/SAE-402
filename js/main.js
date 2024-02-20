@@ -49,7 +49,11 @@ function trashCollision(e) {
         } else {
             score -= 50;
         }
-        V.setScore(score);
+        if (score < 0) {
+            score = 0;
+        }
+        let pointsText = document.querySelector('#pointsText');
+        pointsText.setAttribute('text', 'value:Points: ' + score);
     }, 0);
 
 }
