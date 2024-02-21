@@ -36,18 +36,42 @@ function groundCollision(e) {
 
 }
 
+
+
 function trashCollision(e) {
     setTimeout(function () {
         let targetNode = e.detail.target.el;
-        let trashclass = e.detail.target.el.classList.item(2);
-        let objectclass = e.detail.body.el.classList.item(1);
+        let objectclass = e.detail.target.el.classList.item(0);
+        let trashclass = e.detail.body.el.classList.item(0);
 
+        console.log(e.detail.target.el)
+        console.log(e.detail.body.el)
+        console.log('-----------------------------')
+        console.log(objectclass);
+        console.log(trashclass);
+
+        if (targetNode.classList.contains('trashHitbox')) {
+            targetNode = e.detail.body.el;
+            document.querySelector('#debug2').setAttribute('text', 'value: ' + targetNode);
+
+
+        }
         targetNode.parentNode.removeChild(targetNode);
+
+        console.log(objectclass);
+        console.log(trashclass);
+
+        document.querySelector('#debug').setAttribute('text', 'value: ' + objectclass + ' ' + trashclass);
+
 
         if (trashclass == objectclass) {
             score += 100;
-        } else {
+            V.createScore('+100');
+
+        } else if (trashclass != null && objectclass != null) {
             score -= 50;
+            V.createScore('-50');
+
         }
         if (score < 0) {
             score = 0;
@@ -62,4 +86,7 @@ function trashCollision(e) {
 document.querySelector('#ground').addEventListener('collide', groundCollision);
 
 document.querySelectorAll('.trashHitbox').forEach(item => { item.addEventListener('collide', trashCollision); });
+
+
+
 

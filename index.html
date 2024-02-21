@@ -9,10 +9,11 @@
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 
 <body>
-  <a-scene id="scene" physics="gravity: -6; debug: true">
+  <a-scene id="scene" physics="gravity: -7; debug: true">
     <a-assets>
       <a-asset-item id="bag-glb" src="items/bag.glb"></a-asset-item>
       <a-asset-item id="bocale-glb" src="items/bocale.glb"></a-asset-item>
@@ -77,6 +78,10 @@
       <a-entity id="timeText" position="0.3 0.15 0" rotation="-10 0 0" scale="1 1 1" text="value:Time: ;"></a-entity>
     </a-entity>
 
+    <a-entity id="debug" position="0 2 -3" rotation="-10 0 0" scale="3 3 3" text="value:Time: ;"></a-entity>
+    <a-entity id="debug2" position="0 2.5 -3" rotation="-10 0 0" scale="3 3 3" text="value:Time: ;"></a-entity>
+
+
 
     <!-- PLAQUETTE -->
     <a-entity dynamic-body id="plaquette" geometry="primitive: box; width: 1.8; height: 0.8; depth: 0.2"
@@ -93,14 +98,14 @@
 
 
     <!-- pedestal -->
-    <a-entity geometry="primitive: box; width: 1.3; height: 3.6; depth: 1.3" static-body gltf-model="#pedestal"
-      scale="0.5 0.5 0.5" position="0 0 -0.8"></a-entity>
+    <a-entity id="pedestal" geometry="primitive: box; width: 1.3; height: 3.6; depth: 1.3" static-body
+      gltf-model="#pedestal" scale="0.5 0.5 0.5" position="0 0 -0.8"></a-entity>
 
 
     <!-- TERRAIN -->
     <a-grid static-body id="ground"></a-grid>
     <a-sky color="#87ceeb"></a-sky>
-    <a-entity static-body gltf-model="#park" scale="5 5 5" position="0 9.5 0"></a-entity>
+    <a-entity gltf-model="#park" scale="5 5 5" position="0 9.5 0"></a-entity>
 
 
     <!-- LIGHTS -->
