@@ -65,16 +65,16 @@
 
     <!-- HANDS -->
     <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: left; handModelStyle: lowPoly;"
-      sphere-collider="objects: .cube;" grab>
+      sphere-collider="objects: .cube;" grab></a-entity>
 
-      <a-entity id="timeText" position="0.3 0.2 0" rotation="-10 0 0" scale="1 1 1" text="value:Time: ;"></a-entity>
-    </a-entity>
+
 
     <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: right; handModelStyle: lowPoly;"
       sphere-collider="objects: .cube;" grab>
 
       <a-entity id="pointsText" position="0.3 0.2 0" rotation="-10 0 0" scale="1 1 1"
         text="value:Points: 0;"></a-entity>
+      <a-entity id="timeText" position="0.3 0.15 0" rotation="-10 0 0" scale="1 1 1" text="value:Time: ;"></a-entity>
     </a-entity>
 
 

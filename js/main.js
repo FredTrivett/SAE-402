@@ -39,7 +39,7 @@ function groundCollision(e) {
 function trashCollision(e) {
     setTimeout(function () {
         let targetNode = e.detail.target.el;
-        let trashclass = e.detail.target.el.classList.item(1);
+        let trashclass = e.detail.target.el.classList.item(2);
         let objectclass = e.detail.body.el.classList.item(1);
 
         targetNode.parentNode.removeChild(targetNode);
@@ -52,6 +52,7 @@ function trashCollision(e) {
         if (score < 0) {
             score = 0;
         }
+        console.log(score);
         let pointsText = document.querySelector('#pointsText');
         pointsText.setAttribute('text', 'value:Points: ' + score);
     }, 0);
