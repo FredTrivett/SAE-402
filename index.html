@@ -15,8 +15,8 @@
 <body>
   <a-scene id="scene" physics="gravity: -7; debug: true">
     <a-assets>
-      <img id="play" src="./play.png">
-      <img id="rules" src="./rules.png">
+      <img id="play" src="./assets/play.png">
+      <img id="rules" src="./assets/rules.png">
       <!-- OBJECTS -->
       <a-asset-item id="bag-glb" src="items/bag.glb"></a-asset-item>
       <a-asset-item id="bocale-glb" src="items/bocale.glb"></a-asset-item>
@@ -74,8 +74,8 @@
       position="0 2 1">
     </a-entity>
 
-    <a-image id="playbutton" class="collidable" src="#play" position="0 1.5 -0.5" width="1.08" height="0.5"></a-image>
-    <a-image id="rules" src="#rules" position="0 2.5 -0.5" width="1.81" height="1"></a-image>
+    <a-image id="playbutton" class="collidable" src="#play" position="0 1.85 -0.5" width=".54" height="0.25"></a-image>
+    <a-image id="rulesbutton" src="#rules" position="0 2.5 -0.5" width="1.81" height="1"></a-image>
     <!-- HANDS -->
     <a-entity click-check raycaster="objects: .clickable; showLine:true;"
       static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: left; handModelStyle: lowPoly;"

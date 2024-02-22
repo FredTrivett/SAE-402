@@ -100,7 +100,10 @@ AFRAME.registerComponent('collider-check', {
             startTimer();
             // delete play button
             let playButton = document.querySelector('#playButton');
+            let rules = document.querySelector('#rulesbutton');
             playButton.parentNode.removeChild(playButton);
+            rules.parentNode.removeChild(rulesbutton);
+
             for (let i = 0; i < Object.keys(objects).length; i++) {
                 V.createObject(common, objects[i]);
             }
