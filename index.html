@@ -65,33 +65,27 @@
     <audio id="sound+" src="./assets/point+.wav"></audio>
     <audio id="sound-" src="./assets/point-.wav"></audio>
 
-    <!-- CAMERA -->
-    <a-entity camera look-controls wasd-controls position="0 2 1"></a-entity>
-
 
     <!-- CAMERA -->
-    <a-entity cursor collider-check raycaster="objects: .collidable; showLine:true;" camera look-controls wasd-controls
-      position="0 2 1">
+    <a-entity id="camera" cursor collider-check raycaster="objects: .collidable; showLine:false;" camera look-controls
+      wasd-controls position="0 2 1">
     </a-entity>
 
-    <a-image id="playbutton" class="collidable" src="#play" position="0 1.85 -0.5" width=".54" height="0.25"></a-image>
-    <a-image id="rulesbutton" src="#rules" position="0 2.5 -0.5" width="1.81" height="1"></a-image>
+    <a-image id="playbutton" class="collidable" src="#play" position="0 1.2 -1" width=".54" height="0.25"></a-image>
+    <a-image id="rulesbutton" src="#rules" position="0 2.5 -5" width="7.24" height="4"></a-image>
     <!-- HANDS -->
-    <a-entity click-check raycaster="objects: .clickable; showLine:true;"
+    <a-entity class="hand" collider-check raycaster="objects: .collidable; showLine:true;"
       static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: left; handModelStyle: lowPoly;"
       sphere-collider="objects: .cube;" grab></a-entity>
 
-    <a-entity collider-check raycaster="objects: .collidable; showLine:true;"
+    <a-entity class="hand" collider-check raycaster="objects: .collidable; showLine:true;"
       static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: right; handModelStyle: lowPoly;"
       sphere-collider="objects: .cube;" grab>
 
       <a-entity id="pointsText" position="0.3 0.2 0" rotation="-10 0 0" scale="1 1 1"
         text="value:Points: 0;"></a-entity>
-      <a-entity id="timeText" position="0.3 0.15 0" rotation="-10 0 0" scale="1 1 1" text="value:Time: ;"></a-entity>
+      <a-entity id="timeText" position="0.3 0.15 0" rotation="-10 0 0" scale="1 1 1" text="value:Time: 0;"></a-entity>
     </a-entity>
-
-    <a-entity id="debug" position="0 2 -3" rotation="-10 0 0" scale="3 3 3" text="value:Time: ;"></a-entity>
-    <a-entity id="debug2" position="0 2.5 -3" rotation="-10 0 0" scale="3 3 3" text="value:Time: ;"></a-entity>
 
 
     <!-- MUSIC -->
@@ -101,8 +95,6 @@
       <!-- MUSIC -->
       <a-sound src="src: url(./assets/music.mp3)" autoplay="true" loop="true" position="0 2 0"></a-sound>
     </a-entity>
-
-    <!-- <a-sound src="src: url(./assets/point+.wav)" autoplay="true" loop="false" position="0 2 0"></a-sound> -->
 
 
     <!-- TITLE -->

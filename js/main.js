@@ -9,6 +9,12 @@ let score = 0;
 
 
 
+function playSound(type) {
+    var audio = document.getElementById("sound" + type);
+    audio.play();
+}
+
+
 function groundCollision(e) {
     setTimeout(function () {
         let targetId = e.detail.target.el.id;
@@ -26,12 +32,6 @@ function groundCollision(e) {
         }
     }, 1);
 
-}
-
-
-function playSound(type) {
-    var audio = document.getElementById("sound" + type);
-    audio.play();
 }
 
 
@@ -84,7 +84,14 @@ document.querySelector('#ground').addEventListener('collide', groundCollision);
 
 document.querySelectorAll('.trashHitbox').forEach(item => { item.addEventListener('collide', trashCollision); });
 
+for (let i = 0; i < Object.keys(objects).length; i++) {
+    V.createObject(common, objects[i]);
+}
 
+for (let i = 0; i < Object.keys(trashes).length; i++) {
+    V.createTrash(common, trashes[i]);
+
+}
 
 AFRAME.registerComponent('collider-check', {
     dependencies: ['raycaster'],
@@ -99,19 +106,18 @@ AFRAME.registerComponent('collider-check', {
             console.log('Player clicked something!');
             startTimer();
             // delete play button
+
+            document.querySelectorAll('.hand').forEach(item => {
+                item.setAttribute('raycaster', { showLine: false });
+            });
             let playButton = document.querySelector('#playButton');
             let rules = document.querySelector('#rulesbutton');
             playButton.parentNode.removeChild(playButton);
             rules.parentNode.removeChild(rulesbutton);
+            document.querySelectorAll('.object').forEach(item => {
+                item.classList.add('cube');
+            });
 
-            for (let i = 0; i < Object.keys(objects).length; i++) {
-                V.createObject(common, objects[i]);
-            }
-
-            for (let i = 0; i < Object.keys(trashes).length; i++) {
-                V.createTrash(common, trashes[i]);
-
-            }
         });
     }
 });

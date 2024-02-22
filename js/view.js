@@ -11,7 +11,7 @@ V.createObject = function (common, object) {
     entity.setAttribute('material', common.material);
     entity.classList.add(object.class);
     entity.classList.add(common.selector);
-    entity.classList.add(common.class);
+    // entity.classList.add(common.class);
     entity.setAttribute('id', object.name + '-box');
 
     let entityChild = document.createElement('a-entity');
