@@ -15,6 +15,8 @@
 <body>
   <a-scene id="scene" physics="gravity: -7; debug: true">
     <a-assets>
+      <img id="play" src="./play.png">
+      <img id="rules" src="./rules.png">
       <!-- OBJECTS -->
       <a-asset-item id="bag-glb" src="items/bag.glb"></a-asset-item>
       <a-asset-item id="bocale-glb" src="items/bocale.glb"></a-asset-item>
@@ -67,11 +69,20 @@
     <a-entity camera look-controls wasd-controls position="0 2 1"></a-entity>
 
 
+    <!-- CAMERA -->
+    <a-entity cursor collider-check raycaster="objects: .collidable; showLine:true;" camera look-controls wasd-controls
+      position="0 2 1">
+    </a-entity>
+
+    <a-image id="playbutton" class="collidable" src="#play" position="0 1.5 -0.5" width="1.08" height="0.5"></a-image>
+    <a-image id="rules" src="#rules" position="0 2.5 -0.5" width="1.81" height="1"></a-image>
     <!-- HANDS -->
-    <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: left; handModelStyle: lowPoly;"
+    <a-entity click-check raycaster="objects: .clickable; showLine:true;"
+      static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: left; handModelStyle: lowPoly;"
       sphere-collider="objects: .cube;" grab></a-entity>
 
-    <a-entity static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: right; handModelStyle: lowPoly;"
+    <a-entity collider-check raycaster="objects: .collidable; showLine:true;"
+      static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: right; handModelStyle: lowPoly;"
       sphere-collider="objects: .cube;" grab>
 
       <a-entity id="pointsText" position="0.3 0.2 0" rotation="-10 0 0" scale="1 1 1"

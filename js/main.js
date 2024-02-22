@@ -7,15 +7,7 @@ import { V } from './view.js';
 let score = 0;
 
 
-startTimer();
 
-for (let i = 0; i < Object.keys(objects).length; i++) {
-    V.createObject(common, objects[i]);
-}
-
-for (let i = 0; i < Object.keys(trashes).length; i++) {
-    V.createTrash(common, trashes[i]);
-}
 
 function groundCollision(e) {
     setTimeout(function () {
@@ -93,4 +85,31 @@ document.querySelector('#ground').addEventListener('collide', groundCollision);
 document.querySelectorAll('.trashHitbox').forEach(item => { item.addEventListener('collide', trashCollision); });
 
 
+
+AFRAME.registerComponent('collider-check', {
+    dependencies: ['raycaster'],
+
+    init: function () {
+        this.el.addEventListener('raycaster-intersection', function () {
+            console.log('Player hit something!');
+
+        });
+
+        this.el.addEventListener('click', function () {
+            console.log('Player clicked something!');
+            startTimer();
+            // delete play button
+            let playButton = document.querySelector('#playButton');
+            playButton.parentNode.removeChild(playButton);
+            for (let i = 0; i < Object.keys(objects).length; i++) {
+                V.createObject(common, objects[i]);
+            }
+
+            for (let i = 0; i < Object.keys(trashes).length; i++) {
+                V.createTrash(common, trashes[i]);
+
+            }
+        });
+    }
+});
 
