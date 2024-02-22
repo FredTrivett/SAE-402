@@ -1,12 +1,12 @@
 import common from './data/common.js';
 import objects from './data/objects.js';
 import trashes from './data/trashes.js';
-import startTimer from './timer.js';
+import createTimer from './timer.js';
 import { V } from './view.js';
 
 let score = 0;
 let objectRemoved = 0;
-const { stopTimer, resetTimer } = startTimer();
+const timer = createTimer();
 
 
 
@@ -66,8 +66,8 @@ function trashCollision(e) {
             V.createGameOver();
             V.createPlayButton();
             objectRemoved = 0;
-            // setTimeout(stopTimer, 0);
-            stopTimer();
+
+            timer.stop();
             V.toggleRaycaster(true);
 
 
@@ -95,10 +95,16 @@ AFRAME.registerComponent('collider-check', {
         this.el.addEventListener('click', function () {
             console.log('Player clicked something!');
             score = 0;
+
             V.setScore(score);
-            // setTimeout(resetTimer, 0);
-            resetTimer();
-            startTimer();
+            try {
+                timer.reset();
+            }
+            catch (e) {
+                console.log('no timer');
+            }
+
+            timer.start();
 
             V.toggleRaycaster(false);
             let playButton = document.querySelector('#playButton');
