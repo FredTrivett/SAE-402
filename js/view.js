@@ -70,23 +70,34 @@ V.setScore = function (score) {
     pointsText.setAttribute('text', 'value:Points: ' + score);
 }
 
-V.createScore = function (score) {
 
-    let textNode = document.createElement('a-entity');
-    textNode.setAttribute('text', 'value:' + score);
-    textNode.setAttribute('position', { x: 0, y: 1.6, z: -0.8 });
-    textNode.setAttribute('scale', { x: 3, y: 3, z: 3 });
-    textNode.setAttribute('class', 'text');
-
-    document.querySelector('a-scene').appendChild(textNode);
-
-    gsap.to(textNode.object3D.position, { y: 1.5, }, 2)
-
-    // setTimeout(function () {
-    //     textNode.parentNode.removeChild(textNode);
-    // }, 2000);
-
-    return textNode;
+V.createGameOver = function () {
+    let gameOver = document.createElement('a-text');
+    gameOver.setAttribute('id', 'gameOver');
+    gameOver.setAttribute('value', 'Game Over');
+    gameOver.setAttribute('position', '0 2 -5');
+    gameOver.setAttribute('color', 'red');
+    gameOver.setAttribute('align', 'center');
+    gameOver.setAttribute('width', '10');
+    document.querySelector('a-scene').appendChild(gameOver);
 }
+
+V.createPlayButton = function () {
+    let playButton = document.createElement('a-image');
+    playButton.setAttribute('id', 'playbutton');
+    playButton.setAttribute('class', 'collidable');
+    playButton.setAttribute('src', '#play');
+    playButton.setAttribute('position', '0 1.2 -1');
+    playButton.setAttribute('width', '0.54');
+    playButton.setAttribute('height', '0.25');
+    document.querySelector('a-scene').appendChild(playButton);
+}
+
+V.toggleRaycaster = function (value) {
+    document.querySelectorAll('.hand').forEach(item => {
+        item.setAttribute('raycaster', { showLine: value });
+    });
+}
+
 
 export { V }

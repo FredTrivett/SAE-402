@@ -40,14 +40,17 @@ function groundCollision(e) {
 function trashCollision(e) {
     setTimeout(function () {
         let targetNode = e.detail.target.el;
+        let objectId = e.detail.target.el.id;
         let objectclass = e.detail.target.el.classList.item(0);
         let trashclass = e.detail.body.el.classList.item(0);
 
         if (targetNode.classList.contains('trashHitbox')) {
             targetNode = e.detail.body.el;
         }
-        targetNode.parentNode.removeChild(targetNode);
-        objectRemoved++;
+        if (objectId != 'plaquette' && objectId != 'ground' && objectId != 'radio') {
+            targetNode.parentNode.removeChild(targetNode);
+            objectRemoved++;
+        }
 
         if (trashclass == objectclass) {
             score += 100;
@@ -56,43 +59,22 @@ function trashCollision(e) {
             score -= 50;
             playSound('-');
         }
-        if (score < 0) {
-            score = 0;
-        }
-        document.querySelector('#pointsText').setAttribute('text', 'value:Points: ' + score);
 
+        V.setScore(score);
         if (objectRemoved >= Object.keys(objects).length) {
 
-            console.log('Game over');
-            // create text element game over
-            let gameOver = document.createElement('a-text');
-            gameOver.setAttribute('id', 'gameOver');
-            gameOver.setAttribute('value', 'Game Over');
-            gameOver.setAttribute('position', '0 2 -5');
-            gameOver.setAttribute('color', 'red');
-            gameOver.setAttribute('align', 'center');
-            gameOver.setAttribute('width', '10');
-            document.querySelector('a-scene').appendChild(gameOver);
-
-            // create play button
-            let playButton = document.createElement('a-image');
-            playButton.setAttribute('id', 'playbutton');
-            playButton.setAttribute('class', 'collidable');
-            playButton.setAttribute('src', '#play');
-            playButton.setAttribute('position', '0 1.2 -1');
-            playButton.setAttribute('width', '0.54');
-            playButton.setAttribute('height', '0.25');
-            document.querySelector('a-scene').appendChild(playButton);
+            V.createGameOver();
+            V.createPlayButton();
             objectRemoved = 0;
-            setTimeout(stopTimer, 0);
+            // setTimeout(stopTimer, 0);
+            stopTimer();
+            V.toggleRaycaster(true);
+
 
         }
     }, 0);
 
 }
-
-
-
 
 
 for (let i = 0; i < Object.keys(trashes).length; i++) {
@@ -113,28 +95,25 @@ AFRAME.registerComponent('collider-check', {
         this.el.addEventListener('click', function () {
             console.log('Player clicked something!');
             score = 0;
-            document.querySelector('#pointsText').setAttribute('text', 'value:Points: ' + score);
-            setTimeout(resetTimer, 0);
-            // delete play button
+            V.setScore(score);
+            // setTimeout(resetTimer, 0);
+            resetTimer();
+            startTimer();
 
-            document.querySelectorAll('.hand').forEach(item => {
-                item.setAttribute('raycaster', { showLine: false });
-            });
+            V.toggleRaycaster(false);
             let playButton = document.querySelector('#playButton');
-            let rules = document.querySelector('#rulesbutton');
-            // try to remove game over
+            playButton.parentNode.removeChild(playButton);
             try {
                 let gameOver = document.querySelector('#gameOver');
                 gameOver.parentNode.removeChild(gameOver);
-            }
-            catch (e) {
+            } catch (e) {
                 console.log('no game over');
             }
-            playButton.parentNode.removeChild(playButton);
+
             try {
+                let rules = document.querySelector('#rulesbutton');
                 rules.parentNode.removeChild(rulesbutton);
-            }
-            catch (e) {
+            } catch (e) {
                 console.log('no rules button');
             }
 
