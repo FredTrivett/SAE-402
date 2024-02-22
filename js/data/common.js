@@ -2,8 +2,8 @@ let common = {
     "class": "cube",
     "selector": "object",
     "material": {
-        "transparent": false,
-        "opacity": 1
+        "transparent": true,
+        "opacity": 0
     },
     "scale": {
         "x": 0.3,

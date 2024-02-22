@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <a-scene id="scene" physics="gravity: -7; debug: true">
+  <a-scene id="scene" physics="gravity: -7; debug: false">
     <a-assets>
       <img id="play" src="./assets/play.png">
       <img id="rules" src="./assets/rules.png">
@@ -89,7 +89,7 @@
 
 
     <!-- MUSIC -->
-    <a-entity class="cube" dynamic-body geometry="primitive: box; width: 2; height: 1.2; depth: 0.5"
+    <a-entity class="cube" id="radio" dynamic-body geometry="primitive: box; width: 2; height: 1.2; depth: 0.5"
       material="opacity:0; transparent:true" scale="0.2 0.2 0.2" position="1.8 2 1.4" rotation="0 -120 0">
       <a-entity gltf-model="#radio-glb" position="0 -0.6 0"></a-entity>
       <!-- MUSIC -->
@@ -117,7 +117,7 @@
 
 
     <!-- TERRAIN -->
-    <a-grid static-body id="ground"></a-grid>
+    <a-grid static-body id="ground" position="0 0.08 0" material="transparent:true; opacity:0;"></a-grid>
     <a-sky color="#87ceeb"></a-sky>
     <a-entity gltf-model="#park" scale="5 5 5" position="0 9.5 0"></a-entity>
 
