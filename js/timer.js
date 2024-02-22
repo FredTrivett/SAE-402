@@ -1,25 +1,31 @@
-function startTimer() {
+function createTimer() {
     let seconds = 0;
     let timerId;
 
     function updateTimer() {
         seconds++;
+        console.log(seconds);
         document.querySelector('#timeText').setAttribute('text', 'value:Time: ' + seconds);
         timerId = setTimeout(updateTimer, 1000);
     }
 
-    updateTimer();
-
-    function stopTimer() {
-        clearTimeout(timerId);
+    function start() {
+        if (!timerId) {
+            updateTimer();
+        }
     }
 
-    function resetTimer() {
+    function stop() {
+        clearTimeout(timerId);
+        timerId = null;
+    }
+
+    function reset() {
         seconds = 0;
         document.querySelector('#timeText').setAttribute('text', 'value:Time: ' + seconds);
     }
 
-    return { stopTimer, resetTimer };
+    return { start, stop, reset };
 }
 
-export default startTimer;
+export default createTimer;
