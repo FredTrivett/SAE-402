@@ -37,6 +37,13 @@ function groundCollision(e) {
 }
 
 
+function playSound(type) {
+    var audio = document.getElementById("sound" + type);
+    audio.play();
+}
+
+
+
 
 function trashCollision(e) {
     setTimeout(function () {
@@ -52,25 +59,23 @@ function trashCollision(e) {
 
         if (targetNode.classList.contains('trashHitbox')) {
             targetNode = e.detail.body.el;
-            document.querySelector('#debug2').setAttribute('text', 'value: ' + targetNode);
-
-
         }
         targetNode.parentNode.removeChild(targetNode);
 
         console.log(objectclass);
         console.log(trashclass);
 
-        document.querySelector('#debug').setAttribute('text', 'value: ' + objectclass + ' ' + trashclass);
 
 
         if (trashclass == objectclass) {
             score += 100;
-            V.createScore('+100');
+            playSound('+');
+
 
         } else if (trashclass != null && objectclass != null) {
             score -= 50;
-            V.createScore('-50');
+            playSound('-');
+
 
         }
         if (score < 0) {
@@ -86,7 +91,6 @@ function trashCollision(e) {
 document.querySelector('#ground').addEventListener('collide', groundCollision);
 
 document.querySelectorAll('.trashHitbox').forEach(item => { item.addEventListener('collide', trashCollision); });
-
 
 
 
