@@ -17,6 +17,7 @@
     <a-assets>
       <img id="play" src="./assets/play.png">
       <img id="rules" src="./assets/rules.png">
+
       <!-- OBJECTS -->
       <a-asset-item id="bag-glb" src="items/bag.glb"></a-asset-item>
       <a-asset-item id="bocale-glb" src="items/bocale.glb"></a-asset-item>
@@ -73,6 +74,7 @@
 
     <a-image id="playbutton" class="collidable" src="#play" position="0 1.2 -1" width=".54" height="0.25"></a-image>
     <a-image id="rulesbutton" src="#rules" position="0 2.5 -5" width="7.24" height="4"></a-image>
+
     <!-- HANDS -->
     <a-entity class="hand" collider-check raycaster="objects: .collidable; showLine:true;"
       static-body="shape: sphere; sphereRadius: 0.05;" hand-controls="hand: left; handModelStyle: lowPoly;"

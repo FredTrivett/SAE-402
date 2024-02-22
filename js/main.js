@@ -6,7 +6,7 @@ import { V } from './view.js';
 
 let score = 0;
 let objectRemoved = 0;
-
+const { stopTimer, resetTimer } = startTimer();
 
 
 
@@ -62,8 +62,29 @@ function trashCollision(e) {
         document.querySelector('#pointsText').setAttribute('text', 'value:Points: ' + score);
 
         if (objectRemoved >= Object.keys(objects).length) {
+
             console.log('Game over');
-            document.querySelector('#pointsText').setAttribute('text', 'value:Game over');
+            // create text element game over
+            let gameOver = document.createElement('a-text');
+            gameOver.setAttribute('id', 'gameOver');
+            gameOver.setAttribute('value', 'Game Over');
+            gameOver.setAttribute('position', '0 2 -5');
+            gameOver.setAttribute('color', 'red');
+            gameOver.setAttribute('align', 'center');
+            gameOver.setAttribute('width', '10');
+            document.querySelector('a-scene').appendChild(gameOver);
+
+            // create play button
+            let playButton = document.createElement('a-image');
+            playButton.setAttribute('id', 'playbutton');
+            playButton.setAttribute('class', 'collidable');
+            playButton.setAttribute('src', '#play');
+            playButton.setAttribute('position', '0 1.2 -1');
+            playButton.setAttribute('width', '0.54');
+            playButton.setAttribute('height', '0.25');
+            document.querySelector('a-scene').appendChild(playButton);
+            objectRemoved = 0;
+            setTimeout(stopTimer, 0);
 
         }
     }, 0);
@@ -91,7 +112,9 @@ AFRAME.registerComponent('collider-check', {
 
         this.el.addEventListener('click', function () {
             console.log('Player clicked something!');
-            startTimer();
+            score = 0;
+            document.querySelector('#pointsText').setAttribute('text', 'value:Points: ' + score);
+            setTimeout(resetTimer, 0);
             // delete play button
 
             document.querySelectorAll('.hand').forEach(item => {
@@ -99,8 +122,22 @@ AFRAME.registerComponent('collider-check', {
             });
             let playButton = document.querySelector('#playButton');
             let rules = document.querySelector('#rulesbutton');
+            // try to remove game over
+            try {
+                let gameOver = document.querySelector('#gameOver');
+                gameOver.parentNode.removeChild(gameOver);
+            }
+            catch (e) {
+                console.log('no game over');
+            }
             playButton.parentNode.removeChild(playButton);
-            rules.parentNode.removeChild(rulesbutton);
+            try {
+                rules.parentNode.removeChild(rulesbutton);
+            }
+            catch (e) {
+                console.log('no rules button');
+            }
+
             for (let i = 0; i < Object.keys(objects).length; i++) {
                 V.createObject(common, objects[i]);
             }
