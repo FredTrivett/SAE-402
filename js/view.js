@@ -66,17 +66,15 @@ V.setScore = function (score) {
     if (score < 0) {
         score = 0;
     }
-    let pointsText = document.querySelector('#pointsText');
-    pointsText.setAttribute('text', 'value:Points: ' + score);
+    document.querySelector('#pointsText').setAttribute('text', 'value:Points: ' + score);
 }
 
 
 V.createGameOver = function () {
     let gameOver = document.createElement('a-text');
     gameOver.setAttribute('id', 'gameOver');
-    gameOver.setAttribute('value', 'Game Over');
-    gameOver.setAttribute('position', '0 2 -5');
-    gameOver.setAttribute('color', 'red');
+    gameOver.setAttribute('value', 'VICTOIRE');
+    gameOver.setAttribute('position', '0 3 -5');
     gameOver.setAttribute('align', 'center');
     gameOver.setAttribute('width', '10');
     document.querySelector('a-scene').appendChild(gameOver);

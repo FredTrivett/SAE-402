@@ -93,9 +93,8 @@ AFRAME.registerComponent('collider-check', {
         document.querySelectorAll('.trashHitbox').forEach(item => { item.addEventListener('collide', trashCollision); });
 
         this.el.addEventListener('click', function () {
-            console.log('Player clicked something!');
-            score = 0;
 
+            score = 0;
             V.setScore(score);
             try {
                 timer.reset();

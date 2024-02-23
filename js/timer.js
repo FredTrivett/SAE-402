@@ -1,6 +1,6 @@
 function createTimer() {
     let seconds = 0;
-    let timerId;
+    let timerId = null;
 
     function updateTimer() {
         seconds++;
@@ -10,9 +10,7 @@ function createTimer() {
     }
 
     function start() {
-        if (!timerId) {
-            updateTimer();
-        }
+        updateTimer();
     }
 
     function stop() {
